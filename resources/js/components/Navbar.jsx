@@ -144,6 +144,9 @@ function CompanyNavbar() {
           </a>
         </div>
 
+
+       
+
         {/* Mobile Toggle */}
         <div className="lg:hidden text-white">
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>

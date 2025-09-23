@@ -13,6 +13,7 @@ import Card from "./components/conten/card.jsx";
 import ProfilCard from "./components/conten/profil.jsx";
 import TeamCards from "./components/conten/TeamCards.jsx";
 import Tutorial1 from "./components/conten/tutorial1.jsx"; // path benar
+import Example from "./components/conten/Penjelasan_jenis_sampah.jsx";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
     
       <Tutorial1 />   {/* Memanggil komponen tutorial1 */}
       <Card />
+      <Example />
       <TeamCards />
     </div>
   );
