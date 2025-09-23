@@ -1,55 +1,90 @@
 import React, { useEffect } from "react";
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid';
 import AOS from "aos";
 import "aos/dist/aos.css";
+import {
+  CloudArrowUpIcon,
+  LockClosedIcon,
+  ServerIcon,
+} from "@heroicons/react/20/solid";
 
 const features = [
   {
-    name: 'Pengelolaan Sampah Modern',
+    name: "Sampah Organik",
     description:
-      'Kami memanfaatkan teknologi terbaru untuk menjauhkan sampah dari bumi dan mendukung lingkungan yang lestari.',
+      "Sampah dari bahan alami yang mudah terurai, seperti sisa makanan, dedaunan, dan ranting pohon. Dapat diolah kembali menjadi kompos untuk menyuburkan tanah.",
     icon: CloudArrowUpIcon,
   },
   {
-    name: 'Daur Ulang Cerdas',
-    description: 'Sampah diproses ulang menjadi bahan berguna, mengurangi limbah dan menjaga ekosistem.',
+    name: "Sampah Anorganik",
+    description:
+      "Berupa plastik, kaleng, kaca, dan kertas. Jenis sampah ini tidak mudah terurai, tetapi bisa dimanfaatkan kembali melalui proses daur ulang.",
     icon: LockClosedIcon,
   },
   {
-    name: 'Laporan & Pemantauan',
-    description: 'Memastikan semua proses pengelolaan sampah terdokumentasi dengan baik dan transparan.',
+    name: "Sampah B3 (Bahan Berbahaya & Beracun)",
+    description:
+      "Contohnya baterai bekas, obat-obatan kadaluarsa, pestisida, dan limbah kimia. Sampah ini harus ditangani dengan cara khusus agar tidak merusak lingkungan.",
     icon: ServerIcon,
+  },
+  {
+    name: "Sampah Elektronik",
+    description:
+      "Meliputi peralatan elektronik rusak seperti HP, komputer, atau televisi. Komponen di dalamnya dapat didaur ulang, namun harus diproses dengan benar.",
+    icon: ServerIcon,
+  },
+  {
+    name: "Sampah Konstruksi",
+    description:
+      "Puing bangunan, beton, batu, dan kayu sisa konstruksi. Sebagian masih dapat dipakai kembali untuk keperluan lain atau didaur ulang.",
+    icon: CloudArrowUpIcon,
+  },
+  {
+    name: "Sampah Medis",
+    description:
+      "Jarum suntik, masker sekali pakai, sarung tangan medis, dan limbah rumah sakit lainnya yang berpotensi berbahaya bagi kesehatan manusia.",
+    icon: LockClosedIcon,
   },
 ];
 
 export default function Example() {
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
+    AOS.init({ duration: 1200, once: true });
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gray-100 py-24 sm:py-32">
-      <div className="absolute inset-0 bg-gray-100"></div>
+    <div className="relative min-h-screen bg-gradient-to-br from-green-50 via-white to-green-100 py-24 sm:py-32">
+      {/* Background texture */}
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')] opacity-20"></div>
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:max-w-none lg:grid-cols-2 items-center">
-          
-          {/* Konten Teks */}
-          <div className="lg:pt-4 lg:pr-8" data-aos="fade-right">
-            <div className="lg:max-w-lg">
-              <h2 className="text-base font-semibold text-green-600">Lingkungan Bersih</h2>
-              <p className="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-                Tenaga sampah dijauhkan dari bumi untuk cinta lestari
+        {/* Grid: teks dulu di mobile, gambar di bawah; kebalikan di desktop */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Konten teks */}
+          <div
+            className="order-1 lg:order-2"
+            data-aos="fade-left"
+          >
+            <div className="lg:max-w-2xl">
+              <h2 className="text-base font-semibold text-green-600 uppercase tracking-wide">
+                Penjelasan Jenis Sampah
+              </h2>
+              <p className="mt-3 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                Mengenal Sampah untuk{" "}
+                <span className="text-green-600">Mengelola dengan Bijak</span>
               </p>
-              <p className="mt-6 text-lg text-gray-600">
-                Kami berkomitmen menjaga bumi dengan pengelolaan sampah yang tepat, efisien, dan ramah lingkungan.
+              <p className="mt-6 text-lg text-gray-600 leading-relaxed">
+                Sampah yang kita hasilkan sehari-hari terbagi menjadi beberapa
+                jenis. Dengan mengenali masing-masing kategori, kita bisa lebih
+                bijak dalam memilah, mengurangi dampak buruk bagi lingkungan,
+                serta memaksimalkan potensi daur ulang.
               </p>
 
-              <dl className="mt-10 max-w-xl space-y-6 text-base text-gray-700 lg:max-w-none">
+              {/* Daftar fitur */}
+              <dl className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 text-base text-gray-700">
                 {features.map((feature, index) => (
                   <div
                     key={feature.name}
-                    className="relative pl-12 group cursor-pointer transition-all duration-300 hover:bg-green-50 rounded-lg p-4"
+                    className="relative pl-12 group transition-all duration-300 hover:bg-green-50 rounded-xl p-4"
                     data-aos="fade-up"
                     data-aos-delay={index * 100}
                   >
@@ -57,7 +92,9 @@ export default function Example() {
                       <feature.icon aria-hidden="true" className="h-6 w-6" />
                     </dt>
                     <dd className="ml-2 group-hover:text-green-700 transition-colors duration-300">
-                      <span className="font-semibold text-gray-900">{feature.name}</span>
+                      <span className="font-semibold text-gray-900">
+                        {feature.name}
+                      </span>
                       <p className="mt-1 text-gray-700">{feature.description}</p>
                     </dd>
                   </div>
@@ -66,20 +103,68 @@ export default function Example() {
             </div>
           </div>
 
-          {/* Gambar */}
-          <div className="relative flex justify-end" data-aos="fade-left">
-            <div className="bg-white/90 backdrop-blur-md rounded-xl shadow-xl border border-gray-200 p-2 transform transition-transform duration-500 hover:scale-105 hover:shadow-2xl">
+          {/* Kolase gambar */}
+          <div
+            className="order-2 lg:order-1 grid grid-cols-3 gap-4"
+            data-aos="fade-right"
+          >
+            {/* Gambar besar */}
+            <div className="col-span-2 row-span-2">
               <img
-                alt="Ilustrasi Pengelolaan Sampah"
-                src="https://images.unsplash.com/photo-1581092795360-2f26f3a3a4f4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8c2FtcGFoJTIwZGF1cnJ8fDB8fHx8MTY5NTI1NjMzOQ&ixlib=rb-4.0.3&q=80&w=1080"
-                className="w-full max-w-3xl rounded-xl shadow-lg ring-1 ring-gray-200 sm:w-auto"
+                src="img/sampah/trash-184994_1280.jpg"
+                alt="Sampah 1"
+                className="w-full h-[420px] object-cover rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
               />
             </div>
-          </div>
 
-          <div>
-          </div>
+            {/* Gambar kecil tambahan */}
+            <img
+              src="img/sampah/the-bottle-5128607_1280.jpg"
+              alt="Sampah 2"
+              className="w-full h-[180px] object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
+            />
+            <img
+              src="img/sampah/green-waste-486011_1280.jpg"
+              alt="Sampah 3"
+              className="w-full h-[220px] object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
+            />
+            <img
+              src="img/sampah/tires-904945_1280.jpg"
+              alt="Sampah 4"
+              className="w-full h-[160px] object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
+            />
+            <img
+              src="img/sampah/trash-184994_1280.jpg"
+              alt="Sampah 5"
+              className="w-full h-[200px] object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
+            />
 
+            {/* Gambar besar kedua */}
+            <div className="col-span-2">
+              <img
+                src="img/sampah/the-bottle-5128607_1280.jpg"
+                alt="Sampah 6"
+                className="w-full h-[300px] object-cover rounded-2xl shadow-xl hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Gambar kecil tambahan */}
+            <img
+              src="img/sampah/green-waste-486011_1280.jpg"
+              alt="Sampah 7"
+              className="w-full h-[160px] object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
+            />
+            <img
+              src="img/sampah/tires-904945_1280.jpg"
+              alt="Sampah 8"
+              className="w-full h-[180px] object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
+            />
+            <img
+              src="img/sampah/trash-184994_1280.jpg"
+              alt="Sampah 9"
+              className="w-full h-[200px] object-cover rounded-xl shadow-md hover:scale-105 transition-transform duration-500"
+            />
+          </div>
         </div>
       </div>
     </div>
