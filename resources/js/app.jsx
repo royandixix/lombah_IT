@@ -10,7 +10,7 @@ import "../css/app.css";
 
 // Routing sampah 
 import Navbar from "./components/sampah/layout/Navbar.jsx";
-import HeaderContent from "./components/sampah/Layout/Header.jsx";
+import HeaderContent from "./components/sampah/layout/header.jsx";
 
 
 import Card from "./components/sampah/card.jsx";
@@ -26,7 +26,7 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <Header />
+      <HeaderContent />
       <Tutorial1 />
       <Card />
       <Example />
