@@ -16,6 +16,7 @@ function CompanyNavbar() {
       setShowNavbar(!(currentScroll > lastScroll && currentScroll > 100));
       setLastScroll(currentScroll);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScroll]);
@@ -23,24 +24,20 @@ function CompanyNavbar() {
   // Click outside dropdown → close dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target)
-      ) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setDropdownOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-transform transition-opacity duration-500 ${
-        scrolled ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-transparent"
-      } ${showNavbar ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
+      className={`fixed top-0 w-full z-50 transition-transform transition-opacity duration-500
+        ${scrolled ? "bg-black/80 backdrop-blur-md shadow-md" : "bg-transparent"}
+        ${showNavbar ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
     >
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
@@ -52,7 +49,7 @@ function CompanyNavbar() {
         <ul className="hidden lg:flex items-center space-x-6 text-white">
           <li>
             <a href="#about" className="hover:text-gray-200 transition">
-              Tentang Kami
+              Home
             </a>
           </li>
 
@@ -69,12 +66,7 @@ function CompanyNavbar() {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M19 9l-7 7-7-7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {dropdownOpen && (
@@ -84,7 +76,7 @@ function CompanyNavbar() {
                     href="#import"
                     className="block px-4 py-2 text-white hover:bg-white/10 rounded-md"
                   >
-                    Impor
+                    Tentang Sampah
                   </a>
                 </li>
                 <li>
@@ -92,7 +84,7 @@ function CompanyNavbar() {
                     href="#export"
                     className="block px-4 py-2 text-white hover:bg-white/10 rounded-md"
                   >
-                    Ekspor
+                    Tentang Hutan
                   </a>
                 </li>
                 <li>
@@ -100,7 +92,7 @@ function CompanyNavbar() {
                     href="#consulting"
                     className="block px-4 py-2 text-white hover:bg-white/10 rounded-md"
                   >
-                    Konsultasi
+                    Tentang Karbon
                   </a>
                 </li>
                 <li className="border-t border-white/20 my-1"></li>
@@ -144,9 +136,6 @@ function CompanyNavbar() {
           </a>
         </div>
 
-
-       
-
         {/* Mobile Toggle */}
         <div className="lg:hidden text-white">
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -157,19 +146,9 @@ function CompanyNavbar() {
               viewBox="0 0 24 24"
             >
               {mobileMenuOpen ? (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               ) : (
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               )}
             </svg>
           </button>
@@ -182,7 +161,7 @@ function CompanyNavbar() {
           <ul className="space-y-2">
             <li>
               <a href="#about" className="block hover:text-gray-200">
-                Tentang Kami
+                Home
               </a>
             </li>
             <li>

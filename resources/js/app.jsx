@@ -6,28 +6,31 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/gambar.css";
 import "../css/app.css";
 
-// Components
-import AppNavbar from "./components/Navbar.jsx";
-import HeaderContent from "./components/conten/header.jsx";
-import Card from "./components/conten/card.jsx";
-import ProfilCard from "./components/conten/profil.jsx";
-import TeamCards from "./components/conten/TeamCards.jsx";
-import Tutorial1 from "./components/conten/tutorial1.jsx"; // path benar
-import Example from "./components/conten/Penjelasan_jenis_sampah.jsx";
-import CaraPengeLolaAnSampah from "./components/conten/CaraPengeLolaAnSampah"
+
+
+// Routing sampah 
+import AppNavbar from "./components/sampah/layout/Navbar.jsx";
+import HeaderContent from "./components/sampah/layout/Header.jsx";
+import Card from "./components/sampah/card.jsx";
+// import Profil from "./components/sampah/profil.jsx";
+import TeamCards from "./components/sampah/TeamCards.jsx";
+import Tutorial1 from "./components/sampah/Tutorial1.jsx";
+import Example from "./components/sampah/Penjelasan_jenis_sampah.jsx";
+import CaraPengeLolaAnSampah from "./components/sampah/CaraPengeLolaAnSampah.jsx";
+import Footer from "./components/sampah/layout/footer.jsx";
 
 export default function App() {
   return (
     <div>
       <AppNavbar />
       <HeaderContent />
-      
-    
-      <Tutorial1 />   {/* Memanggil komponen tutorial1 */}
+      <Tutorial1 />
       <Card />
       <Example />
       <CaraPengeLolaAnSampah />
       <TeamCards />
+      <Footer />
+      {/* <Profil />   sekarang dipanggil */}
     </div>
   );
 }

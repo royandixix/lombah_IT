@@ -10,4 +10,11 @@ export default defineConfig({
         }),
         react(),
     ],
+    resolve: {
+        alias: {
+            '@css': '/resources/css',
+            '@components': '/resources/js/components',
+            '@sampah': '/resources/js/components/sampah',
+        },
+    },
 });
