@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import "../../../../css/header.css";  // benar
+import "../../../css/header.css";
+
 
 export default function HeaderContent() {
   const texts = [
