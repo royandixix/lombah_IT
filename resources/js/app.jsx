@@ -6,31 +6,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../css/gambar.css";
 import "../css/app.css";
 
-// Routing sampah 
-import Navbar from "./components/sampah/Layout/Navbar.jsx";
-import HeaderContent from "./components/sampah/Layout/Header.jsx";
+// Routing sampah
+
+import Navbar from "./components/sampah/layout/Navbar.jsx";
+import HeaderContent from "./components/sampah/layout/HeaderContent.js";
+import Footer from "./components/sampah/layout/Footer.jsx";
+
 import Card from "./components/sampah/card.jsx";
 // import Profil from "./components/sampah/profil.jsx";
 import TeamCards from "./components/sampah/TeamCards.jsx";
 import Tutorial1 from "./components/sampah/Tutorial1.jsx";
 import Example from "./components/sampah/Penjelasan_jenis_sampah.jsx";
 import CaraPengeLolaAnSampah from "./components/sampah/CaraPengeLolaAnSampah.jsx";
-import Footer from "./components/sampah/Layout/Footer.jsx";
 
 export default function App() {
-  return (
-    <div>
-      <Navbar />
-      <HeaderContent />
-      <Tutorial1 />
-      <Card />
-      <Example />
-      <CaraPengeLolaAnSampah />
-      <TeamCards />
-      <Footer />
-      {/* <Profil />   sekarang dipanggil */}
-    </div>
-  );
+    return (
+        <div>
+            <Navbar />
+            <HeaderContent />
+            <Tutorial1 />
+            <Card />
+            <Example />
+            <CaraPengeLolaAnSampah />
+            <TeamCards />
+            <Footer />
+            {/* <Profil />   sekarang dipanggil */}
+        </div>
+    );
 }
 
 // Render ke root
