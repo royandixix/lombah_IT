@@ -8,15 +8,15 @@ import "../css/app.css";
 
 
 
-import AppNavbar from "./components/sampah/layout/Navbar.jsx";
-import HeaderContent from "./components/sampah/layout/header.jsx";
+import AppNavbar from "./components/sampah/Navbar.jsx";
+import HeaderContent from "./components/sampah/Header.jsx";
 import Card from "./components/sampah/card.jsx";
 // import Profil from "./components/sampah/profil.jsx";
 import TeamCards from "./components/sampah/TeamCards.jsx";
 import Tutorial1 from "./components/sampah/Tutorial1.jsx";
 import Example from "./components/sampah/Penjelasan_jenis_sampah.jsx";
 import CaraPengeLolaAnSampah from "./components/sampah/CaraPengeLolaAnSampah.jsx";
-import Footer from "./components/sampah/layout/footer.jsx";
+import Footer from "./components/sampah/Footer.jsx";
 
 export default function App() {
   return (
