@@ -10,7 +10,8 @@ import "../css/app.css";
 
 // Routing sampah 
 import Navbar from "./components/sampah/layout/Navbar.jsx";
-import Header from "./components/sampah/layout/Hesader.jsx";
+import HeaderContent from "./components/sampah/Layout/Header.jsx";
+
 
 import Card from "./components/sampah/card.jsx";
 // import Profil from "./components/sampah/profil.jsx";
