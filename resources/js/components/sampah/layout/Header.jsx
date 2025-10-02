@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../../css/header.css";
-
+import "../../../../css/header.css";
 
 export default function HeaderContent() {
   const texts = [
@@ -14,8 +13,7 @@ export default function HeaderContent() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % texts.length);
-    }, 4000); // ganti teks setiap 4 detik
-
+    }, 4000);
     return () => clearInterval(interval);
   }, [texts.length]);
 

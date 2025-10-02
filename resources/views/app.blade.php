@@ -24,33 +24,17 @@
 
   <!-- Global Font Style -->
   <style>
-    /* Terapkan font Poppins ke seluruh body dan heading */
     body, h1, h2, h3, h4, h5, h6, p, a, button, input, textarea {
       font-family: 'Poppins', sans-serif;
-      color: #1f2937; /* abu gelap, nyaman dibaca */
+      color: #1f2937;
       line-height: 1.6;
     }
 
-    h1, h2, h3, h4, h5, h6 {
-      font-weight: 600;
-    }
-
-    p, li, span {
-      font-weight: 400;
-    }
-
-    a {
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: #10b981; /* hijau cerah saat hover */
-    }
-
-    button {
-      font-weight: 500;
-    }
+    h1, h2, h3, h4, h5, h6 { font-weight: 600; }
+    p, li, span { font-weight: 400; }
+    a { text-decoration: none; transition: color 0.3s; }
+    a:hover { color: #10b981; }
+    button { font-weight: 500; }
   </style>
 </head>
 <body>
